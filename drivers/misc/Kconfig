@@ -583,6 +583,12 @@ config SIMTRAY_STATUS
 	help
 	  Say 'y' here to support SIM tray GPIO detection
 
+config DPDT_STATUS
+        tristate "Xiaomi dpdt status"
+        default n
+        help
+          Say 'y' here to support dpdt GPIO detection
+
 config TEST_IRQ_REQUESTER
 	tristate "Receive interrupt notifications in user-space"
 	depends on DEBUG_FS
