@@ -1366,4 +1366,6 @@ config VITURALSAR
 
 	 If unsure, say N.
 
+source "drivers/input/touchscreen/xiaomi/Kconfig"
+
 endif
