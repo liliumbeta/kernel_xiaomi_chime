@@ -1287,6 +1287,7 @@ static int msm_dai_q6_island_mode_put(struct snd_kcontrol *kcontrol,
 	u16 port_id = (u16)kcontrol->private_value;
 
 	pr_debug("%s: island mode = %d\n", __func__, value);
+	trace_printk("%s: island mode = %d\n", __func__, value);
 
 	afe_set_island_mode_cfg(port_id, value);
 	return 0;
@@ -7493,7 +7494,6 @@ static struct platform_driver msm_dai_q6_dev = {
 		.owner = THIS_MODULE,
 		.of_match_table = msm_dai_q6_dev_dt_match,
 		.suppress_bind_attrs = true,
-		.probe_type = PROBE_FORCE_SYNCHRONOUS,
 	},
 };
 
@@ -7532,7 +7532,6 @@ static struct platform_driver msm_dai_q6 = {
 		.owner = THIS_MODULE,
 		.of_match_table = msm_dai_q6_dt_match,
 		.suppress_bind_attrs = true,
-		.probe_type = PROBE_FORCE_SYNCHRONOUS,
 	},
 };
 
@@ -7907,7 +7906,6 @@ static struct platform_driver msm_dai_tdm_q6 = {
 		.owner = THIS_MODULE,
 		.of_match_table = msm_dai_tdm_dt_match,
 		.suppress_bind_attrs = true,
-		.probe_type = PROBE_FORCE_SYNCHRONOUS,
 	},
 };
 
@@ -12231,7 +12229,6 @@ static struct platform_driver msm_dai_q6_tdm_driver = {
 		.owner = THIS_MODULE,
 		.of_match_table = msm_dai_q6_tdm_dev_dt_match,
 		.suppress_bind_attrs = true,
-		.probe_type = PROBE_FORCE_SYNCHRONOUS,
 	},
 };
 
